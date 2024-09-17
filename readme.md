@@ -24,6 +24,8 @@ CreateThread(function()
 end)
 ```
 
+# OPTIONAL
+
 ## qb-core/client/drawtext.lua
 ```lua
     exports['qb-core']:DrawText() => exports["exter-textui"]:displayTextUI(text, position)
