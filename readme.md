@@ -1,6 +1,9 @@
 
 # Put this on top of your client side and you don't need to do anything else. This is for classic cordinates
 
+![npx 2](https://github.com/user-attachments/assets/060313fa-d3df-4933-846f-c8f1c3e0ddff)
+
+
 ## This is for spesific coord text-ui
 ```
 CreateThread(function()
