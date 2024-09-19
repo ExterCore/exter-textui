@@ -28,11 +28,48 @@ end)
 
 ## qb-core/client/drawtext.lua
 ```lua
-    exports['qb-core']:DrawText() => exports["exter-textui"]:displayTextUI(text, position)
+    local function hideText()
+        exports["exter-textui-"]:hideTextUI()
+    end
 
-    exports['qb-core']:HideText() => exports["exter-textui"]:hideTextUI()
+    local function drawText(text, position)
+        if type(position) ~= 'string' then position = 'left' end
+        exports["exter-textui-"]:displayTextUI(text, position)
+    end
 
-    exports['qb-core']:KeyPressed() => Dont change it
+    local function changeText(text, position)
+        if type(position) ~= 'string' then position = 'left' end
+        exports['exter-textui-']:changeText(text, position)
+    end
 
-    exports['qb-core']:ChangeText() => exports['exter-textui']:changeText(text, position)
+    local function keyPressed()
+        CreateThread(function() -- Not sure if a thread is needed but why not eh?
+            -- SendNUIMessage({
+            --     action = 'KEY_PRESSED',
+            -- })
+            Wait(500)
+            hideText()
+        end)
+    end
+
+    RegisterNetEvent('qb-core:client:DrawText', function(text, position)
+        drawText(text, position)
+    end)
+
+    RegisterNetEvent('qb-core:client:ChangeText', function(text, position)
+        changeText(text, position)
+    end)
+
+    RegisterNetEvent('qb-core:client:HideText', function()
+        hideText()
+    end)
+
+    RegisterNetEvent('qb-core:client:KeyPressed', function()
+        keyPressed()
+    end)
+
+    exports('DrawText', drawText)
+    exports('ChangeText', changeText)
+    exports('HideText', hideText)
+    exports('KeyPressed', keyPressed)
 ```
