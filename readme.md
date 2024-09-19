@@ -8,7 +8,7 @@
 ```
 CreateThread(function()
     -- For fixed coordinate
-    exports['exter-textui']:create3DTextUI("pa-test", {
+    exports['exter-textui']:create3DTextUI("exter-test", {
         coords = vector3(-1461.18, -31.48, 54.63),
         displayDist = 6.0,
         interactDist = 2.0,
@@ -26,9 +26,9 @@ CreateThread(function()
             args = {}
         }
     })
-    exports['exter-textui']:delete3DTextUI("pa-test")
+    exports['exter-textui']:delete3DTextUI("exter-test")
     -- For Players
-    exports['exter-textui']:create3DTextUIOnPlayers("pa-test", {
+    exports['exter-textui']:create3DTextUIOnPlayers("exter-test", {
         id = targetId,
         ped = targetPed,
         displayDist = 6.0,
