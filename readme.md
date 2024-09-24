@@ -52,7 +52,7 @@ CreateThread(function()
         enableKeyClick = true, -- If true when you near it and click key it will trigger the event that you write inside triggerData
         keyNum = 38,
         key = "E",
-        text = "PA Test",
+        text = "Test",
         theme = "green", -- or red
         triggerData = {
             triggerName = "",
